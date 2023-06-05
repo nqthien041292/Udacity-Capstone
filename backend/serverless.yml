@@ -30,15 +30,6 @@ provider:
     # Enable API Gateway logs
     restApi: true
 
-  iam:
-    role:
-      statements:
-        - Effect: Allow
-          Action:
-            - xray:PutTelemetryRecords
-            - xray:PutTraceSegments
-          Resource: "*"
-
 custom:
   documentation:
     api:
@@ -139,7 +130,7 @@ functions:
       - Effect: Allow
         Action:
           - xray:PutTraceSegments
-          - - xray:PutTelemetryRecords
+          - xray:PutTelemetryRecords
         Resource:
           - "*"
 
